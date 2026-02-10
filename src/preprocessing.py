@@ -1,28 +1,36 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
+import os
 
-def preprocess_data():
-    df = pd.read_csv("data/raw/customer_churn.csv")
+# Paths
+RAW_PATH = "data/raw/customer_churn_raw.csv"
+PROCESSED_PATH = "data/processed/churn_clean.csv"
 
-    df.columns = (
-        df.columns
-        .str.strip()
-        .str.lower()
-        .str.replace(" ", "_")
-    )
+# Create processed folder if not exists
+os.makedirs("data/processed", exist_ok=True)
 
-    df = df.drop(columns=["customer_id", "churn_reason"], errors="ignore")
+# 1️⃣ Load raw data
+df = pd.read_csv(RAW_PATH)
 
-    for col in df.select_dtypes(include="object").columns:
-        le = LabelEncoder()
-        df[col] = le.fit_transform(df[col].astype(str))
+# 2️⃣ Normalize column names
+df.columns = (
+    df.columns
+    .str.strip()
+    .str.lower()
+    .str.replace(" ", "_")
+)
 
-    X = df.drop("churn_label", axis=1)
-    y = df["churn_label"]
+# 3️⃣ Convert churn label to binary
+df["churn_label"] = df["churn_label"].map({"Yes": 1, "No": 0})
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, stratify=y, random_state=42
-    )
+# 4️⃣ Drop ID column
+if "customer_id" in df.columns:
+    df = df.drop(columns=["customer_id"])
 
-    return X_train, X_test, y_train, y_test
+# 5️⃣ Handle missing values (simple & safe)
+df = df.dropna()
+
+# 6️⃣ Save cleaned data ✅
+df.to_csv(PROCESSED_PATH, index=False)
+
+print("✅ churn_clean.csv created successfully")
+print("Shape:", df.shape)

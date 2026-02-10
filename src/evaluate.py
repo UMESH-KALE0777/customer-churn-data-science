@@ -6,4 +6,5 @@ def evaluate_model(model, X_test, y_test):
     print("Classification Report:\n")
     print(classification_report(y_test, y_pred))
 
-    
+    print("Confusion Matrix:\n")
+    print(confusion_matrix(y_test, y_pred))
