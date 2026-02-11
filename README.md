@@ -56,3 +56,150 @@ customer-churn-data-science/
 ├── requirements.txt      # Required libraries
 └── README.md             # Project documentation
 
+🔍 Exploratory Data Analysis (EDA)
+
+During EDA, the following were analyzed:
+
+Customer demographics
+
+Contract types
+
+Monthly charges
+
+Tenure length
+
+Payment methods
+
+Internet services
+
+Add-on services
+
+Key Insights:
+
+Customers with month-to-month contracts have higher churn rates.
+
+Higher monthly charges correlate with increased churn.
+
+Customers with shorter tenure are more likely to leave.
+
+Lack of additional services increases churn probability.
+
+⚙️ Data Preprocessing
+
+Steps performed:
+
+Handling missing values
+
+Encoding categorical variables
+
+Feature scaling
+
+Train-test split
+
+Addressing class imbalance (if applicable)
+
+🤖 Model Building
+
+Model used:
+
+✅ Random Forest Classifier
+
+Why Random Forest?
+
+Handles non-linearity well
+
+Robust to outliers
+
+Works well with mixed data types
+
+Provides feature importance
+
+📈 Model Evaluation
+
+Evaluation metrics used:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-Score
+
+Confusion Matrix
+
+ROC-AUC Score
+
+The model successfully identifies high-risk customers with strong performance across key metrics.
+
+🔥 Feature Importance
+
+Top churn-driving factors:
+
+Contract Type
+
+Tenure
+
+Monthly Charges
+
+Total Charges
+
+Internet Service Type
+
+These features are critical for business decision-making.
+
+🛠️ Tech Stack
+
+Python
+
+Pandas
+
+NumPy
+
+Matplotlib / Seaborn
+
+Scikit-learn
+
+Jupyter Notebook
+
+▶️ How to Run the Project
+1️⃣ Clone the Repository
+git clone https://github.com/UMESH-KALE0777/customer-churn-data-science.git
+cd customer-churn-data-science
+2️⃣ Install Dependencies
+pip install -r requirements.txt
+3️⃣ Run the Project
+python main.py
+
+Or explore notebooks inside the notebooks/ folder.
+
+📌 Future Improvements
+
+Add XGBoost and compare performance
+
+Hyperparameter tuning using GridSearchCV
+
+Deploy model using Streamlit
+
+Create a live churn prediction dashboard
+
+Integrate SHAP for explainability
+
+💡 Real-World Impact
+
+This project demonstrates:
+
+Strong understanding of business-driven ML
+
+End-to-end Data Science workflow
+
+Clean project structuring
+
+Production-oriented mindset
+
+👨‍💻 Author
+
+Umesh Kale
+Aspiring Machine Learning Engineer | Data Science Enthusiast
+
+GitHub: https://github.com/UMESH-KALE0777
