@@ -202,7 +202,7 @@ UMESH R KALE
 
 👨‍💻 Author
 
-Umesh Kale
+Umesh R Kale
 Aspiring Machine Learning Engineer | Data Science Enthusiast
 
 GitHub: https://github.com/UMESH-KALE0777
